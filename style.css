@@ -1,0 +1,103 @@
+/* ============================================== */
+/* BASE STYLING */
+/* ============================================== */
+body {
+    font-family: sans-serif;
+    background-color: #f4f4f9;
+}
+.blog-container {
+    max-width: 700px;
+    margin: 50px auto;
+    padding: 0 15px;
+}
+.struggle-card {
+    background: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    
+    /* Global Transition for smooth JS/Hover changes (REQUIRED for Part 1 & 3) */
+    transition: background-color 0.8s ease, transform 0.4s ease, box-shadow 0.4s ease, border 0.2s;
+}
+
+/* ============================================== */
+/* PART 1: CSS TRANSITION (Imposter Syndrome) */
+/* ============================================== */
+#imposter-syndrome:hover {
+    /* On hover, slightly shrink and apply an anxious shadow */
+    transform: translateY(-5px) scale(0.98); 
+    box-shadow: 0 15px 25px rgba(255, 99, 71, 0.4); /* Jarrring, anxious shadow */
+}
+
+
+/* ============================================== */
+/* PART 1: CSS KEYFRAME ANIMATION (Tutorial Hell) */
+/* ============================================== */
+.loading-spinner {
+    width: 20px;
+    height: 20px;
+    border: 3px solid #ccc;
+    border-top-color: #3498db;
+    border-radius: 50%;
+    margin: 10px 0;
+    
+    /* Continuous, looping animation (REQUIRED for Part 1) */
+    animation: spin 1.5s linear infinite; 
+}
+
+/* Define the Keyframes for the spinner */
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+/* This class is added by JavaScript to STOP the continuous animation. */
+/* ------------------------------------------------------------------ */
+.paused-animation {
+    /* The key property to stop a running keyframe animation */
+    animation-play-state: paused;
+    
+    /* A visual change to signal the loop is broken (e.g., green for success) */
+    border-top-color: #2ecc71 !important; 
+}
+
+
+/* ============================================== */
+/* PART 3: JS TRIGGER PREP (Debugging Error Box) */
+/* ============================================== */
+#error-box {
+    background-color: #ffdddd;
+    color: #cc0000;
+    padding: 15px;
+    border: 1px solid #cc0000;
+    border-radius: 4px;
+    
+    /* Ensure a transition is set up for the JavaScript class toggle */
+    transition: opacity 0.5s ease-out, transform 0.3s ease-in-out; 
+}
+
+/* The class JavaScript uses to hide the element (REQUIRED for Part 3) */
+.hidden {
+    opacity: 0;
+    /* Important: prevents interaction when invisible */
+    pointer-events: none; 
+}
+
+
+/* ============================================== */
+/* PART 3: JS TRIGGER PREP (Merge Conflicts Keyframes) */
+/* ============================================== */
+/* Define the Keyframes for the shaking effect */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px) rotate(0.5deg); }
+  50% { transform: translateX(5px) rotate(-0.5deg); }
+  75% { transform: translateX(-5px) rotate(0.5deg); }
+  100% { transform: translateX(0); }
+}
+
+/* This class is added by JavaScript to trigger the animation */
+.conflict-active {
+    /* Animation runs 3 times for a jarring effect (REQUIRED for Part 3) */
+    animation: shake 0.2s 3; 
+    border: 2px solid #e74c3c; /* Visual emphasis */
+}
